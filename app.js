@@ -5,7 +5,7 @@ function post() {
     let email = document.getElementById("email").value;
     let address = document.getElementById("address").value;
 
-    axios.post('https://crud-mongo-database.com/user', {
+    axios.post('https://crud-mongo-database.herokuapp.com/user', {
 
         userName: userName, email: email, address: address
     })
@@ -30,7 +30,7 @@ function post() {
 
 
 function get() {
-    axios.get('https://crud-mongo-database.com/users')
+    axios.get('https://crud-mongo-database.herokuapp.com/users')
         .then((response) => {
 
             console.log(response);
@@ -92,7 +92,7 @@ function update(_id) {
     let address = document.getElementById(`${_id}-address_`).value;
     let id = document.getElementById("user_id").value;
 
-    axios.put("https://crud-mongo-database.com/user/" + id, {
+    axios.put("https://crud-mongo-database.herokuapp.com/user/" + id, {
         userName: userName,
         email: email,
         address: address,
@@ -110,7 +110,7 @@ function update(_id) {
 }
 function delete_user(_id) {
 
-    axios.delete('https://crud-mongo-database.com/user/' + _id)
+    axios.delete('https://crud-mongo-database.herokuapp.com/user/' + _id)
         .then((response) => {
             console.log(response);
             alert(response.data)
